@@ -1,0 +1,14 @@
+- Basic design
+- Desired functionalities
+  - Resizable grid
+  - Resizable pen
+  - Fill bucket
+  - Color grabber
+  - Reset
+  - Wipe-style eraser
+  - Regular eraser
+  - Color switcher
+  - Shade/lighten
+  - Girdline toggle
+  - Undo button
+  - Background color
