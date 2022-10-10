@@ -1,6 +1,11 @@
 
 html {
-  font-family: '8BIT WONDER', sans-serif;                                               
+  font-family: '8BIT WONDER', sans-serif;
+  background-image: url("/images/8bitbackground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 h1 {
@@ -30,14 +35,18 @@ h1 {
 .check {
   width: 100px;
   height: 30px;
-  border: solid red;
+  outline: 1px solid #1e5180;
   opacity: 1;
 }
 
 .option {
-  border: solid red;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  align-items: center;
   height: 30px;
+  color: whitesmoke;
+}
+
+#options {
+  box-shadow: inset 0 0 20px #913865, rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
 }
