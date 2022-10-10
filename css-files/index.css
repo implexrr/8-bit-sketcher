@@ -1,3 +1,43 @@
+
 html {
   font-family: '8BIT WONDER', sans-serif;                                               
+}
+
+h1 {
+  text-align: center;
+}
+
+#canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+  min-width: 500px;
+  min-height: 500px;
+  border: solid purple;
+}
+
+#canvas_container {
+  display: flex;
+  width: 100%;
+  min-width: 500px;
+  min-height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.check {
+  width: 100px;
+  height: 30px;
+  border: solid red;
+  opacity: 1;
+}
+
+.option {
+  border: solid red;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: 30px;
 }
