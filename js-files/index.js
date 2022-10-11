@@ -53,6 +53,8 @@ function draw_grid () {
   for (let i = 0; i < (grid_size * grid_size); i ++) {
     box = document.createElement('div');
     box.classList.add('box');
+    // Gives each box the ability to be drawn on
+    box.addEventListener('mouseenter', fill);
     box.style.width = box_height + 'px';
     box.style.height = box_height + 'px';
     canvas.appendChild(box);
@@ -63,4 +65,14 @@ function draw_grid () {
 function update_size_text (e) {
   document.querySelector('#size_text').textContent 
   = `Grid size: ${grid_size} x ${grid_size}`;
+}
+
+// Pen functionality
+let mouse_is_down = false;
+function fill (e) {
+  e.target.addEventListener('mousedown', () => {mouse_is_down = true});
+  e.target.addEventListener('mouseup', () => {mouse_is_down = false});
+  if (mouse_is_down == true) {
+    e.target.style.backgroundColor = 'black';
+  }
 }
