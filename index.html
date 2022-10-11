@@ -11,73 +11,92 @@
 <body>
   <h1>8-bit Sketcher</h1>
   <div id="canvas_container">
-    <div id="canvas">CANVAS</div>
+    <div id="canvas"></div>
   </div>
+  <div id="size_text">Grid size: 16 x 16</div>
   <div id="options">
     <div class="option">
       <div class="option_title">
         Pen size
       </div>
-      <!-- INSERT SLIDER HERE -->
-      <input type="checkbox" class="check" id="pen_size">
+      <input type="range" min="1" max="8" value="1" class="slider" id="pen_size">
     </div>
     <div class="option">
       <div class="option_title">
         Grid size
       </div>
-      <!-- INSERT SLIDER HERE -->
-      <input type="checkbox" class="check" id="grid_size">
+      <input type="range" min="1" max="64" value="16" class="slider" id="grid_size">
     </div>
     <div class="option">
       <div class="option_title">
         Pen color
       </div>
-      <!-- INSERT COLOR CHOOSER HERE -->
-      <input type="checkbox" class="check" id="pen_color">
+      <input type="color" class="check" id="pen_color">
     </div>
     <div class="option">
       <div class="option_title">
         Background color
       </div>
-      <input type="checkbox" class="check" id="background_color">
+      <label class="switch">
+        <input type="checkbox" id="background_color">
+        <span class="toggle check"></span>
+      </label>
     </div>
     <div class="option">
       <div class="option_title">
         Bucket mode
       </div>
-      <input type="checkbox" class="check" id="bucket_mode">
+      <label class="switch">
+        <input type="checkbox" id="bucket_mode">
+        <span class="toggle check"></span>
+      </label>
     </div>
     <div class="option">
       <div class="option_title">
         Toggle eraser
       </div>
-      <input type="checkbox" class="check" id="toggle_eraser">
+      <label class="switch">
+        <input type="checkbox" id="eraser_toggle">
+        <span class="toggle check"></span>
+      </label>
     </div>
     <div class="option">
       <div class="option_title">
         Toggle grid lines
       </div>
-      <input type="checkbox" class="check" id="toggle_grid_lines">
+      <label class="switch">
+        <input type="checkbox" id="grid_toggle">
+        <span class="toggle check"></span>
+      </label>
     </div>
     <div class="option">
       <div class="option_title">
         Rainbow mode
       </div>
-      <input type="checkbox" class="check" id="rainbow_mode">
+      <label class="switch">
+        <input type="checkbox" id="rainbow_mode">
+        <span class="toggle check"></span>
+      </label>
     </div>
     <div class="option">
       <div class="option_title">
         Shade mode
       </div>
-      <input type="checkbox" class="check" id="shade_mode">
+      <label class="switch">
+        <input type="checkbox" id="shade_mode">
+        <span class="toggle check"></span>
+      </label>
     </div>
     <div class="option">
       <div class="option_title">
         Lighten mode
       </div>
-      <input type="checkbox" class="check" id="lighten_mode">
+      <label class="switch">
+        <input type="checkbox" id="lighten_mode">
+        <span class="toggle check"></span>
+      </label>
     </div>
   </div>
 </body>
-<script src="/8-bit-sketcher/js-files/index.js"></script>
+<script src="/js-files/index.js"></script>
 </html>

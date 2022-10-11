@@ -13,14 +13,13 @@ h1 {
 }
 
 #canvas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 500px;
   width: 500px;
   min-width: 500px;
   min-height: 500px;
-  border: solid purple;
+  background-color: beige;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  margin: 20px;
 }
 
 #canvas_container {
@@ -40,13 +39,162 @@ h1 {
 }
 
 .option {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 30px;
   color: whitesmoke;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #options {
+  width: 100%;
   box-shadow: inset 0 0 20px #913865, rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  padding: 20px;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+.box {
+  box-sizing: border-box;
+  width: 31.25px;
+  height: 31.25px;
+  border: solid 0.05px black;
+  float: left;
+}
+
+
+
+
+
+
+/* Not sure what's happening here, need to deconstruct */
+input[type='range'] {
+  overflow: hidden;
+  width: 80px;
+  background-color: #CCC;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  height: 25px;
+  width: 25px;
+  background: white;
+  box-shadow: -80px 0 0 80px black;
+}
+
+
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100px;
+  height: 25px;
+  background-color: #CCC;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-right: 15px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: white;
+  cursor: pointer; /* Cursor on hover */
+
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #0f04aa;
+  cursor: pointer; /* Cursor on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** Switch
+ -------------------------------------*/
+
+/* The switch - the box around the toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  width: 75px;
+  height: 25px;
+  opacity: 0.7;
+}
+
+.switch:hover {
+  opacity: 1;
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 75px;
+  height: 25px;
+  background-color: #CCC;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+/* Add white square (:before adds psuedoelement) */
+.toggle:before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .toggle {
+  background-color: #2fc02f;
+}
+
+input:focus + .toggle {
+  box-shadow: 0 0 1px #2fc02f;
+}
+
+input:checked + .toggle:before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+}
+
+
+
+
+#size_text {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  justify-content: center;
 }
