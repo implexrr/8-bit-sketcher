@@ -10,6 +10,7 @@ html {
 
 h1 {
   text-align: center;
+  filter: brightness(100%);
 }
 
 #canvas {
