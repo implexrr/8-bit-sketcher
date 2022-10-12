@@ -6,6 +6,11 @@ let box = document.createElement('div');
 let grid_toggle_button = document.querySelector('#grid_toggle');
 grid_toggle_button.addEventListener('click', toggle_grid);
 
+// Initial shade toggle
+let testdiv = document.querySelector('#testdiv');
+let toggle_shading = document.querySelector('#shade_mode');
+let new_brightness;
+
 // Code for changing grid size
 // Add event listener to grid size slider
 let grid_size_slider = document.querySelector('#grid_size');
@@ -44,6 +49,7 @@ function draw_grid () {
   for (let i = 0; i < (grid_size * grid_size); i ++) {
     box = document.createElement('div');
     box.classList.add('box');
+    box.style.filter = 'brightness(1)';
     // Check if grid toggle is on
     if (grid_toggle_button.checked == false) {
       box.style.border = '0px';
@@ -75,7 +81,12 @@ function erase (e) {
     console.log('inactive');
   }
 }
+// Change pen color
+let color = document.querySelector('#pen_color');
 
+// Change background color
+let background_colour = document.querySelector('#background_color');
+background_colour.addEventListener('change', repaint_canvas);
 
 // Pen functionality
 let mouse_is_down = false;
@@ -83,21 +94,21 @@ function fill (e) {
   e.target.addEventListener('mousedown', () => {mouse_is_down = true});
   e.target.addEventListener('mouseup', () => {mouse_is_down = false});
   if (mouse_is_down == true) {
-    if (eraser_toggle.checked == false) {
-      e.target.style.backgroundColor = color.value;
+    if (eraser_toggle.checked == true) {
+      e.target.style.backgroundColor = background_colour.value;
+      e.target.style.filter = 'brightness(1)';
+    }
+    else if (toggle_shading.checked == true) {
+      // new_brightness = e.target.style.filter
+      // e.target.style.filter = `brightness(${new_brightness})`;
+      console.log(e.target.style.filter);
     }
     else {
-      e.target.style.backgroundColor = background_colour.value;
+      e.target.style.backgroundColor = color.value;
+      e.target.style.filter = 'brightness(1)';
     }
   }
 }
-
-// Change pen color
-let color = document.querySelector('#pen_color');
-
-// Change background color
-let background_colour = document.querySelector('#background_color');
-background_colour.addEventListener('change', repaint_canvas);
 
 function repaint_canvas (e) {
   console.log(e.target.value);
@@ -122,7 +133,18 @@ function toggle_grid (e) {
 
 
 // Shade mode
+toggle_shading.addEventListener('click', shade);
+function shade (e) {
+  if (e.target.checked == true) {
+    console.log('shadeon');
+  }
+  else {
+    console.log('shadeoff');
+  }
+}
 
+testdiv.style.filter = 'brightness(0.05)';
+console.log(testdiv.style.filter);
 // Lighten mode
 
 // Rainbow mode
