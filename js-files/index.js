@@ -95,7 +95,7 @@ function fill (e) {
   e.target.addEventListener('mouseup', () => {mouse_is_down = false});
   if (mouse_is_down == true) {
     if (eraser_toggle.checked == true) {
-      e.target.style.backgroundColor = background_colour.value;
+      e.target.style.backgroundColor = '';
       e.target.style.filter = 'brightness(1)';
     }
     else if (toggle_shading.checked == true) {
