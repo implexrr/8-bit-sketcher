@@ -147,6 +147,16 @@ function shade (e) {
 }
 
 // Lighten mode
+toggle_shading.addEventListener('click', lighten);
+function lighten (e) {
+  if (e.target.checked == true) {
+    console.log('lighton');
+  }
+  else {
+    console.log('lightoff');
+  }
+}
+
 
 // Rainbow mode
 
