@@ -1,15 +1,19 @@
-
 html {
+  height: 100%;
+  width: 100%;
   font-family: '8BIT WONDER', sans-serif;
-  background-image: url("/8-bit-sketcher/images/8bitbackground.png");
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("/8-bit-sketcher/images/8bitbackground.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-
 }
+
+
 
 h1 {
   text-align: center;
+  filter: brightness(100%);
 }
 
 #canvas {
@@ -20,6 +24,14 @@ h1 {
   background-color: beige;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   margin: 20px;
+  margin-bottom: 0px;
+}
+
+#canvas_subcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: cnter;
 }
 
 #canvas_container {
@@ -27,8 +39,9 @@ h1 {
   width: 100%;
   min-width: 500px;
   min-height: 500px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .check {
@@ -39,22 +52,13 @@ h1 {
 }
 
 .option {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  height: 30px;
-  color: whitesmoke;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#options {
   width: 100%;
-  box-shadow: inset 0 0 20px #913865, rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
-  padding: 20px;
-  padding-right: 60px;
-  padding-left: 60px;
+  height: 70px;
+  color: whitesmoke;
 }
 
 .box {
@@ -65,12 +69,6 @@ h1 {
   float: left;
 }
 
-
-
-
-
-
-/* Not sure what's happening here, need to deconstruct */
 input[type='range'] {
   overflow: hidden;
   width: 80px;
@@ -121,17 +119,6 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /** Switch
  -------------------------------------*/
 
@@ -147,7 +134,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .switch:hover {
   opacity: 1;
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  -webkit-transition: .2s;
   transition: opacity .2s;
 }
 .toggle {
@@ -190,11 +177,13 @@ input:checked + .toggle:before {
 }
 
 
-
-
 #size_text {
+  color: white;
+  font-weight: bold;
   display: flex;
-  width: 100%;
-  margin-bottom: 10px;
+  width: 500px;
+  margin-top: 5px;
   justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
 }
