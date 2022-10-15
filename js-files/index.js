@@ -102,6 +102,12 @@ function fill (e) {
       e.target.style.backgroundColor = '';
       e.target.style.filter = 'brightness(1)';
     }
+    else if (rainbow_mode.checked == true) {
+      let r = ((e.offsetX * 69) % 255);
+      let g = ((e.offsetY * 69) % 255);
+      let b = ((e.offsetY * e.offsetX) % 255);
+      e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    }
     else if (toggle_lighten.checked == true) {
       if (e.target.style.backgroundColor == 'rgb(0, 0, 0)') {
         e.target.style.backgroundColor = 'rgb(25, 25, 25)';
@@ -174,11 +180,16 @@ function lighten (e) {
 
 
 // Rainbow mode
+toggle_rainbow = document.querySelector('#rainbow_mode');
+console.log(toggle_rainbow);
+toggle_rainbow.addEventListener('click', rainbow);
+function rainbow (e) {
+  if (e.target.checked == true) {
+    console.log('rainbow_on');
+  }
+  else {
+    console.log('rainbow_off');
+  }
+}
 
 // Pen size
-
-
-
-let test = document.querySelector('#testdiv');
-test.style.backgroundColor = '#000000';
-console.log(test.style.backgroundColor);
