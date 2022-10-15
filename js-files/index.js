@@ -192,4 +192,3 @@ function rainbow (e) {
   }
 }
 
-// Pen size
