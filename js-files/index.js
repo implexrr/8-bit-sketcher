@@ -2,6 +2,13 @@
 let canvas = document.querySelector('#canvas');
 let box = document.createElement('div');
 
+// Change pen color
+let color = document.querySelector('#pen_color');
+
+// Change background color
+let background_colour = document.querySelector('#background_color');
+background_colour.addEventListener('change', repaint_canvas);
+
 // Initial grid toggle
 let grid_toggle_button = document.querySelector('#grid_toggle');
 grid_toggle_button.addEventListener('click', toggle_grid);
@@ -50,6 +57,7 @@ function draw_grid () {
     box = document.createElement('div');
     box.classList.add('box');
     box.style.filter = 'brightness(1)';
+    box.style.backgroundColor = '';
     // Check if grid toggle is on
     if (grid_toggle_button.checked == false) {
       box.style.border = '0px';
@@ -81,12 +89,6 @@ function erase (e) {
     console.log('inactive');
   }
 }
-// Change pen color
-let color = document.querySelector('#pen_color');
-
-// Change background color
-let background_colour = document.querySelector('#background_color');
-background_colour.addEventListener('change', repaint_canvas);
 
 // Pen functionality
 let mouse_is_down = false;
@@ -99,9 +101,11 @@ function fill (e) {
       e.target.style.filter = 'brightness(1)';
     }
     else if (toggle_shading.checked == true) {
-      // new_brightness = e.target.style.filter
-      // e.target.style.filter = `brightness(${new_brightness})`;
-      console.log(e.target.style.filter);
+      let old_brightness = e.target.style.filter.toString();
+      let new_brightness = parseFloat((old_brightness.slice(11, -1))) - 0.1;
+      if (new_brightness > 0) {
+        e.target.style.filter = `brightness(${new_brightness})`;
+      }
     }
     else {
       e.target.style.backgroundColor = color.value;
@@ -111,7 +115,6 @@ function fill (e) {
 }
 
 function repaint_canvas (e) {
-  console.log(e.target.value);
   canvas.style.backgroundColor = e.target.value;
 }
 
@@ -143,8 +146,6 @@ function shade (e) {
   }
 }
 
-testdiv.style.filter = 'brightness(0.05)';
-console.log(testdiv.style.filter);
 // Lighten mode
 
 // Rainbow mode
