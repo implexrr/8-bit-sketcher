@@ -85,6 +85,9 @@ let eraser_toggle = document.querySelector('#eraser_toggle');
 eraser_toggle.addEventListener('click', erase);
 function erase (e) {
   if (e.target.checked == true) {
+    rainbow_mode.checked = false;
+    toggle_lighten.checked = false;
+    toggle_shading.checked = false;
     console.log('activated');
   }
   else {
@@ -160,6 +163,9 @@ function toggle_grid (e) {
 toggle_shading.addEventListener('click', shade);
 function shade (e) {
   if (e.target.checked == true) {
+    eraser_toggle.checked = false;
+    toggle_lighten.checked = false;
+    toggle_rainbow.checked = false;
     console.log('shadeon');
   }
   else {
@@ -171,6 +177,9 @@ function shade (e) {
 toggle_lighten.addEventListener('click', lighten);
 function lighten (e) {
   if (e.target.checked == true) {
+    eraser_toggle.checked = false;
+    toggle_rainbow.checked = false;
+    toggle_shading.checked = false;
     console.log('lighton');
   }
   else {
@@ -186,6 +195,9 @@ toggle_rainbow.addEventListener('click', rainbow);
 function rainbow (e) {
   if (e.target.checked == true) {
     console.log('rainbow_on');
+    eraser_toggle.checked = false;
+    toggle_lighten.checked = false;
+    toggle_shading.checked = false;
   }
   else {
     console.log('rainbow_off');

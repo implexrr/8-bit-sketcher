@@ -75,12 +75,6 @@ h1 {
   float: left;
 }
 
-
-
-
-
-
-/* Not sure what's happening here, need to deconstruct */
 input[type='range'] {
   overflow: hidden;
   width: 80px;
@@ -131,17 +125,6 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /** Switch
  -------------------------------------*/
 
@@ -157,7 +140,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .switch:hover {
   opacity: 1;
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  -webkit-transition: .2s;
   transition: opacity .2s;
 }
 .toggle {
@@ -198,8 +181,6 @@ input:checked + .toggle:before {
   -ms-transform: translateX(50px);
   transform: translateX(50px);
 }
-
-
 
 
 #size_text {
