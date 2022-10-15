@@ -14,9 +14,11 @@ let grid_toggle_button = document.querySelector('#grid_toggle');
 grid_toggle_button.addEventListener('click', toggle_grid);
 
 // Initial shade toggle
-let testdiv = document.querySelector('#testdiv');
 let toggle_shading = document.querySelector('#shade_mode');
 let new_brightness;
+
+// Initial lighten toggle
+let toggle_lighten = document.querySelector('#lighten_mode');
 
 // Code for changing grid size
 // Add event listener to grid size slider
@@ -100,6 +102,19 @@ function fill (e) {
       e.target.style.backgroundColor = '';
       e.target.style.filter = 'brightness(1)';
     }
+    else if (toggle_lighten.checked == true) {
+      if (e.target.style.backgroundColor == 'rgb(0, 0, 0)') {
+        e.target.style.backgroundColor = 'rgb(25, 25, 25)';
+        console.log(e.target.style.backgroundColor);
+      }
+      else {
+        let old_brightness = e.target.style.filter.toString();
+        let new_brightness = parseFloat((old_brightness.slice(11, -1))) + 0.1;
+        if (new_brightness > 0) {
+          e.target.style.filter = `brightness(${new_brightness})`;
+        }
+      }
+    }
     else if (toggle_shading.checked == true) {
       let old_brightness = e.target.style.filter.toString();
       let new_brightness = parseFloat((old_brightness.slice(11, -1))) - 0.1;
@@ -147,7 +162,7 @@ function shade (e) {
 }
 
 // Lighten mode
-toggle_shading.addEventListener('click', lighten);
+toggle_lighten.addEventListener('click', lighten);
 function lighten (e) {
   if (e.target.checked == true) {
     console.log('lighton');
@@ -161,3 +176,9 @@ function lighten (e) {
 // Rainbow mode
 
 // Pen size
+
+
+
+let test = document.querySelector('#testdiv');
+test.style.backgroundColor = '#000000';
+console.log(test.style.backgroundColor);
